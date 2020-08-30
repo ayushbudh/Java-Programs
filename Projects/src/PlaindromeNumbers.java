@@ -1,4 +1,4 @@
-// Program to see whether the given number is plaindrome or not 
+// Write a program to see whether the given number is PlainDrome or not 
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -10,7 +10,6 @@ public class PlaindromeNumbers
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the number: ");
 		int n=sc.nextInt();
-		
 		sc.close();
 		
 		int count=0;
@@ -21,7 +20,6 @@ public class PlaindromeNumbers
 			count++;
 			
 		}
-		
 		int a[] = new int[count];
 		int originalArray[] = new int[count];
 		int r;
@@ -34,8 +32,6 @@ public class PlaindromeNumbers
 			
 		}
 		reverse(a);
-		System.out.println(Arrays.toString(originalArray));
-		System.out.println(Arrays.toString(a));
 		System.out.println("Is the number palindrome ? "+Arrays.equals(originalArray, a));  // Arrays.equals() method used to see if the elements in both arrays are of same in number
 																							// and that the elements are the same 
 	}
@@ -47,12 +43,8 @@ public class PlaindromeNumbers
 		{
 			temp=b[i];
 			b[i]=b[b.length-1-i];
-			b[b.length-1-i]=temp;
-					
+			b[b.length-1-i]=temp;				
 		}
-		
 		return b;
 	}	
-	
 }
-
