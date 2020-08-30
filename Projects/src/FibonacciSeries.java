@@ -1,48 +1,44 @@
-import java.util.Scanner;
+// A program in which you have a sorted array of integers. Write a function that returns a sorted array containing the squares of those integers.
 
-public class FibonacciSeries {
+import java.util.Arrays;
 
-	public static void main(String[] args)
+public class SquaredSortedArray 
+{
+
+	public static void main(String[] args) 
 	{
-		Scanner sc = new Scanner(System.in);
-		
-		int max_num=sc.nextInt();
-		int sum=0;
-		for(int i=0; i<=sum; i++)
+		int array[] = {-7,-3,-1,4,8,12};
+		SquaresortedArray(array);
+		System.out.println(Arrays.toString(array));	
+	}
+	
+	public static int[] SquaresortedArray(int a[])
+	{
+		for(int i=0; i<a.length; i++)
 		{
-			if(sum<max_num)
+			a[i] = a[i]*a[i];
+		}
+		Arrays.sort(a);
+		return a;
+	}
+	
+	
+	public static int[] SquareSortedArray2(int c[])
+	{
+		int squarearray[]= new int[c.length];
+		
+		for(int i=0; i<squarearray.length; i++)
+		{
+			if(Math.abs(c[i])>Math.abs(c[c.length-1-i]))
 			{
-				
-			System.out.print(fib(i)+",");
-			sum=fib(i+2);
-			
-			
+				squarearray[c.length-1-i]=c[i]*c[i];
 			}
 			else
 			{
-				System.out.print(fib(i));
-				break;
+				squarearray[c.length-1-i]=c[c.length-1-i]*c[c.length-1-i];
 			}
 		}
-
-	}
-	
-	public static int fib(int n)
-	{
-		if(n==0)
-		{
-			return 0;
-		}
-		else if(n==1 || n==2)
-		{
-			return 1;
-		}
-		else
-		{
-			return fib(n-2)+fib(n-1);
-		}
-		
-		
+		return squarearray;
 	}
 
 }
