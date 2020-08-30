@@ -1,44 +1,50 @@
-// A program in which you have a sorted array of integers. Write a function that returns a sorted array containing the squares of those integers.
 
-import java.util.Arrays;
+import java.util.Scanner;
 
-public class SquaredSortedArray 
+public class FibonacciSeries
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		int array[] = {-7,-3,-1,4,8,12};
-		SquaresortedArray(array);
-		System.out.println(Arrays.toString(array));	
-	}
-	
-	public static int[] SquaresortedArray(int a[])
-	{
-		for(int i=0; i<a.length; i++)
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a number which will be last or the maximum number which is the sum of the  previous two numbers in the Fibonacci Sequence:");
+		int max_num=sc.nextInt();
+		sc.close();
+		int sum=0;
+		for(int i=0; i<=sum; i++)
 		{
-			a[i] = a[i]*a[i];
-		}
-		Arrays.sort(a);
-		return a;
-	}
-	
-	
-	public static int[] SquareSortedArray2(int c[])
-	{
-		int squarearray[]= new int[c.length];
-		
-		for(int i=0; i<squarearray.length; i++)
-		{
-			if(Math.abs(c[i])>Math.abs(c[c.length-1-i]))
+			if(sum<=max_num)
 			{
-				squarearray[c.length-1-i]=c[i]*c[i];
+				
+			System.out.print(fib(i)+",");
+			sum=fib(i+2);
+			
+			
 			}
 			else
 			{
-				squarearray[c.length-1-i]=c[c.length-1-i]*c[c.length-1-i];
+				System.out.print(fib(i));
+				break;
 			}
 		}
-		return squarearray;
+
+	}
+	
+	public static int fib(int n)
+	{
+		if(n==0)
+		{
+			return 0;
+		}
+		else if(n==1 || n==2)
+		{
+			return 1;
+		}
+		else
+		{
+			return fib(n-2)+fib(n-1);
+		}
+		
+		
 	}
 
 }
